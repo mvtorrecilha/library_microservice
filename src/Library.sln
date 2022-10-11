@@ -15,25 +15,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aggregator", "Aggregator", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course", "Course", "{64974A6F-3106-4299-A93F-3F8690BD5878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Course.API", "Services\Course\Library.Course.API\Library.Course.API.csproj", "{0D07776B-96EB-41AC-8FF0-EBBF3D8871FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Course.API", "Services\Course\Library.Course.API\Library.Course.API.csproj", "{0D07776B-96EB-41AC-8FF0-EBBF3D8871FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Course.Application", "Services\Course\Library.Course.Application\Library.Course.Application.csproj", "{483DAC8F-317F-4DD3-8CFB-26B6A5E413A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Course.Application", "Services\Course\Library.Course.Application\Library.Course.Application.csproj", "{483DAC8F-317F-4DD3-8CFB-26B6A5E413A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Course.Domain", "Services\Course\Library.Course.Domain\Library.Course.Domain.csproj", "{A711FE14-446F-40AD-BFF2-015480C72A9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Course.Domain", "Services\Course\Library.Course.Domain\Library.Course.Domain.csproj", "{A711FE14-446F-40AD-BFF2-015480C72A9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9CE1D83B-2A0E-4F2C-8A8A-5D1442BFF461}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Course.Infrastructure.Data", "Services\Course\Infrastructure\Library.Course.Infrastructure.Data\Library.Course.Infrastructure.Data.csproj", "{C3B35215-CA29-4F2C-A576-4AC99A33F338}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Course.Infrastructure.Data", "Services\Course\Infrastructure\Library.Course.Infrastructure.Data\Library.Course.Infrastructure.Data.csproj", "{C3B35215-CA29-4F2C-A576-4AC99A33F338}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Student", "Student", "{101116F8-5064-4474-A172-FE2E0D563B3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2119A987-578B-4E2D-AB68-BC16CF1CB1F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Student.API", "Services\Student\Library.Student.API\Library.Student.API.csproj", "{FC038FBA-EBAD-496E-9C12-6F8C11069CE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Student.API", "Services\Student\Library.Student.API\Library.Student.API.csproj", "{FC038FBA-EBAD-496E-9C12-6F8C11069CE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Student.Infrastructure.Data", "Services\Student\Infrastructure\Library.Student.Infrastructure.Data\Library.Student.Infrastructure.Data.csproj", "{E773E4D9-2CE8-4436-99EE-EE75744E8E1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Student.Infrastructure.Data", "Services\Student\Infrastructure\Library.Student.Infrastructure.Data\Library.Student.Infrastructure.Data.csproj", "{E773E4D9-2CE8-4436-99EE-EE75744E8E1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Student.Domain", "Services\Student\Library.Student.Domain\Library.Student.Domain.csproj", "{FFA66860-85D4-4382-870D-7821241F2085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Student.Domain", "Services\Student\Library.Student.Domain\Library.Student.Domain.csproj", "{FFA66860-85D4-4382-870D-7821241F2085}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Book", "Book", "{D949667C-A01E-4E9E-B9DF-016476B6C4C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9816FB66-012F-42CE-8B68-1D2BB06B7E36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Book.API", "Services\Book\Library.Book.API\Library.Book.API.csproj", "{801D6D2C-9624-4A47-95BB-C0BFA4468479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Book.Domain", "Services\Book\Library.Book.Domain\Library.Book.Domain.csproj", "{7E96D02B-89AC-48B3-BC97-1D2748878DB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Book.Infrastructure.Data", "Services\Book\Infrastructure\Library.Book.Infrastructure.Data\Library.Book.Infrastructure.Data.csproj", "{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +79,18 @@ Global
 		{FFA66860-85D4-4382-870D-7821241F2085}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFA66860-85D4-4382-870D-7821241F2085}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFA66860-85D4-4382-870D-7821241F2085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{801D6D2C-9624-4A47-95BB-C0BFA4468479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801D6D2C-9624-4A47-95BB-C0BFA4468479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801D6D2C-9624-4A47-95BB-C0BFA4468479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801D6D2C-9624-4A47-95BB-C0BFA4468479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E96D02B-89AC-48B3-BC97-1D2748878DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E96D02B-89AC-48B3-BC97-1D2748878DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E96D02B-89AC-48B3-BC97-1D2748878DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E96D02B-89AC-48B3-BC97-1D2748878DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +110,11 @@ Global
 		{FC038FBA-EBAD-496E-9C12-6F8C11069CE9} = {101116F8-5064-4474-A172-FE2E0D563B3F}
 		{E773E4D9-2CE8-4436-99EE-EE75744E8E1C} = {2119A987-578B-4E2D-AB68-BC16CF1CB1F5}
 		{FFA66860-85D4-4382-870D-7821241F2085} = {101116F8-5064-4474-A172-FE2E0D563B3F}
+		{D949667C-A01E-4E9E-B9DF-016476B6C4C7} = {E41368F7-C360-4753-9938-1F5481C17DDF}
+		{9816FB66-012F-42CE-8B68-1D2BB06B7E36} = {D949667C-A01E-4E9E-B9DF-016476B6C4C7}
+		{801D6D2C-9624-4A47-95BB-C0BFA4468479} = {D949667C-A01E-4E9E-B9DF-016476B6C4C7}
+		{7E96D02B-89AC-48B3-BC97-1D2748878DB8} = {D949667C-A01E-4E9E-B9DF-016476B6C4C7}
+		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958} = {9816FB66-012F-42CE-8B68-1D2BB06B7E36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E617E0D-CFA5-4FC3-82F4-C5D2E08EBFEC}
