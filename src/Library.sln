@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Book.Domain", "Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Book.Infrastructure.Data", "Services\Book\Infrastructure\Library.Book.Infrastructure.Data\Library.Book.Infrastructure.Data.csproj", "{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.ApiGateway", "ApiGateways\Base\Library.ApiGateway\Library.ApiGateway.csproj", "{E97EE658-E445-40A0-97E2-1264A79F856E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97EE658-E445-40A0-97E2-1264A79F856E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97EE658-E445-40A0-97E2-1264A79F856E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97EE658-E445-40A0-97E2-1264A79F856E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97EE658-E445-40A0-97E2-1264A79F856E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{801D6D2C-9624-4A47-95BB-C0BFA4468479} = {D949667C-A01E-4E9E-B9DF-016476B6C4C7}
 		{7E96D02B-89AC-48B3-BC97-1D2748878DB8} = {D949667C-A01E-4E9E-B9DF-016476B6C4C7}
 		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958} = {9816FB66-012F-42CE-8B68-1D2BB06B7E36}
+		{E97EE658-E445-40A0-97E2-1264A79F856E} = {3202E01E-64F8-4B5E-BC3C-F6B35AC07E58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E617E0D-CFA5-4FC3-82F4-C5D2E08EBFEC}
