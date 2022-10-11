@@ -49,6 +49,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.ApiGateway", "ApiGa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Web.Aggregator", "ApiGateways\Web.Bff\Aggregator\Library.Web.Aggregator\Library.Web.Aggregator.csproj", "{D0EA5C66-2440-4C12-8B17-0FDF40D4FCE4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{B8EDEDC9-316D-4D5F-A589-C243BFB83B61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Adapter.ResponseFormatter", "Adapters\Library.Adapter.ResponseFormatter\Library.Adapter.ResponseFormatter.csproj", "{68EA3CD5-548D-415C-B329-E6BB54A08947}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,10 @@ Global
 		{D0EA5C66-2440-4C12-8B17-0FDF40D4FCE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0EA5C66-2440-4C12-8B17-0FDF40D4FCE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0EA5C66-2440-4C12-8B17-0FDF40D4FCE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EA3CD5-548D-415C-B329-E6BB54A08947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EA3CD5-548D-415C-B329-E6BB54A08947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EA3CD5-548D-415C-B329-E6BB54A08947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EA3CD5-548D-415C-B329-E6BB54A08947}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +137,7 @@ Global
 		{8F9FDBF9-19B8-4837-B7C7-5E0F45BE8958} = {9816FB66-012F-42CE-8B68-1D2BB06B7E36}
 		{E97EE658-E445-40A0-97E2-1264A79F856E} = {3202E01E-64F8-4B5E-BC3C-F6B35AC07E58}
 		{D0EA5C66-2440-4C12-8B17-0FDF40D4FCE4} = {DF34BB4A-62F1-4599-AB1E-B77861CA362A}
+		{68EA3CD5-548D-415C-B329-E6BB54A08947} = {B8EDEDC9-316D-4D5F-A589-C243BFB83B61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E617E0D-CFA5-4FC3-82F4-C5D2E08EBFEC}
