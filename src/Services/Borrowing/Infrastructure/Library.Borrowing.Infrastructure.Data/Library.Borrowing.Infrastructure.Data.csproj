@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Library.Borrowing.Domain\Library.Borrowing.Domain.csproj" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\..\Library.Borrowing.Domain\Library.Borrowing.Domain.csproj" />
   </ItemGroup>
 
 </Project>

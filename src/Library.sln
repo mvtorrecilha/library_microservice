@@ -61,7 +61,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.Infrastructure.Data", "Services\Borrowing\Infrastructure\Library.Borrowing.Infrastructure.Data\Library.Borrowing.Infrastructure.Data.csproj", "{E394DC79-A233-4919-ADD3-346729A24B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.Domain", "Library.Borrowing.Domain\Library.Borrowing.Domain.csproj", "{C6C8BFE4-BDA7-4581-B895-4B90B0E6F951}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.Domain", "Services\Borrowing\Library.Borrowing.Domain\Library.Borrowing.Domain.csproj", "{C6C8BFE4-BDA7-4581-B895-4B90B0E6F951}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.API", "Services\Borrowing\Library.Borrowing.API\Library.Borrowing.API.csproj", "{8F269AF0-CD83-456A-8DE7-3EE63590E312}"
 EndProject
