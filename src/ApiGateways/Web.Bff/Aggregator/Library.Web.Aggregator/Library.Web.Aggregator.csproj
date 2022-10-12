@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\..\..\Adapters\Library.Adapter.ResponseFormatter\Library.Adapter.ResponseFormatter.csproj" />
   </ItemGroup>
 
 </Project>

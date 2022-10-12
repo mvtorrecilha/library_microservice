@@ -59,11 +59,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Borrowing", "Borrowing", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{48BDA96B-8780-4482-95B0-C79EB1058649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.Infrastructure.Data", "Services\Borrowing\Infrastructure\Library.Borrowing.Infrastructure.Data\Library.Borrowing.Infrastructure.Data.csproj", "{E394DC79-A233-4919-ADD3-346729A24B46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Borrowing.Infrastructure.Data", "Services\Borrowing\Infrastructure\Library.Borrowing.Infrastructure.Data\Library.Borrowing.Infrastructure.Data.csproj", "{E394DC79-A233-4919-ADD3-346729A24B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.Domain", "Services\Borrowing\Library.Borrowing.Domain\Library.Borrowing.Domain.csproj", "{C6C8BFE4-BDA7-4581-B895-4B90B0E6F951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Borrowing.Domain", "Services\Borrowing\Library.Borrowing.Domain\Library.Borrowing.Domain.csproj", "{C6C8BFE4-BDA7-4581-B895-4B90B0E6F951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.API", "Services\Borrowing\Library.Borrowing.API\Library.Borrowing.API.csproj", "{8F269AF0-CD83-456A-8DE7-3EE63590E312}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Borrowing.API", "Services\Borrowing\Library.Borrowing.API\Library.Borrowing.API.csproj", "{8F269AF0-CD83-456A-8DE7-3EE63590E312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Student.Application", "Services\Student\Library.Student.Application\Library.Student.Application.csproj", "{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +141,10 @@ Global
 		{8F269AF0-CD83-456A-8DE7-3EE63590E312}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F269AF0-CD83-456A-8DE7-3EE63590E312}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F269AF0-CD83-456A-8DE7-3EE63590E312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,6 +178,7 @@ Global
 		{E394DC79-A233-4919-ADD3-346729A24B46} = {48BDA96B-8780-4482-95B0-C79EB1058649}
 		{C6C8BFE4-BDA7-4581-B895-4B90B0E6F951} = {09030B9F-95FE-428C-B9EA-363556414541}
 		{8F269AF0-CD83-456A-8DE7-3EE63590E312} = {09030B9F-95FE-428C-B9EA-363556414541}
+		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8} = {101116F8-5064-4474-A172-FE2E0D563B3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E617E0D-CFA5-4FC3-82F4-C5D2E08EBFEC}

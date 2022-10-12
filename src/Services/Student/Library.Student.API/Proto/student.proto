@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcStudent";
+
+package StudentApi;
+
+service StudentGrpc {
+	rpc GetStudentWithCourseByIdAsync(GetStudentWithCourseByIdRequest) returns (GetStudentWithCourseByIdResponse) {}
+}
+
+message GetStudentWithCourseByIdRequest {
+	string id = 1;
+}
+
+message GetStudentWithCourseByIdResponse {
+	string id = 1;
+	string courseId = 2;
+}
