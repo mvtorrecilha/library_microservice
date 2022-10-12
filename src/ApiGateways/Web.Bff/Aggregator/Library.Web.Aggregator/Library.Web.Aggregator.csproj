@@ -7,11 +7,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.21.6" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.ClientFactory" Version="2.49.0" />
+    <PackageReference Include="Grpc.Core" Version="2.46.5" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.49.0" />
+    <PackageReference Include="Grpc.Net.Client.Web" Version="2.49.0" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.49.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.49.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Adapters\Library.Adapter.ResponseFormatter\Library.Adapter.ResponseFormatter.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\..\..\..\Services\Book\Library.Book.API\Proto\book.proto" GrpcServices="Client">
+      <Link>Protos\book.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\..\..\..\Services\Student\Library.Student.API\Proto\student.proto" GrpcServices="Client">
+      <Link>Protos\student.proto</Link>
+    </Protobuf>
   </ItemGroup>
 
 </Project>

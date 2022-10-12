@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Proto\student.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.21.7" />
     <PackageReference Include="Grpc.AspNetCore.Server" Version="2.49.0" />
     <PackageReference Include="Grpc.Tools" Version="2.49.1">

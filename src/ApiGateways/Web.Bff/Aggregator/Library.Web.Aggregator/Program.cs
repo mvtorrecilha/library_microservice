@@ -1,6 +1,13 @@
+using Library.Adapter.ResponseFormatter;
+using Library.Web.Aggregator.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services
+    .AddNotifier()
+    .AddGrpcServices(builder.Configuration)
+    .AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
