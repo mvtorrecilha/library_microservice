@@ -1,15 +1,21 @@
 using Library.Book.API.Configuration;
+using Library.Book.Application;
 using Library.Book.Infrastructure.Data;
 using Library.Book.Infrastructure.Data.Context;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSqlData(builder.Configuration);
-builder.Services.AddSqlServices();
+builder.Services
+    .AddCustomGrpc()
+    .AddSqlData(builder.Configuration)
+    .AddSqlServices()
+    .AddApplication()
+    .AddMediatR(typeof(Program))
+    .AddControllers();
 
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -43,5 +49,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGrpcServices();
 
 app.Run();

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcBook";
+
+package BookApi;
+
+service BookGrpc {
+	rpc ValidateBook(ValidateBookRequest) returns (ValidateBookResponse) {}
+}
+
+message ValidateBookRequest {
+	string bookId = 1;
+	string courseId = 2;
+}
+
+message ValidateBookResponse {
+	bool isValid = 1;
+}

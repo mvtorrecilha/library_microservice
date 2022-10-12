@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Borrowing.API", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Student.Application", "Services\Student\Library.Student.Application\Library.Student.Application.csproj", "{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Book.Application", "Services\Book\Library.Book.Application\Library.Book.Application.csproj", "{342C1A14-1489-46F6-AFB3-57BF8F4935CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,10 @@ Global
 		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342C1A14-1489-46F6-AFB3-57BF8F4935CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342C1A14-1489-46F6-AFB3-57BF8F4935CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342C1A14-1489-46F6-AFB3-57BF8F4935CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342C1A14-1489-46F6-AFB3-57BF8F4935CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -179,6 +185,7 @@ Global
 		{C6C8BFE4-BDA7-4581-B895-4B90B0E6F951} = {09030B9F-95FE-428C-B9EA-363556414541}
 		{8F269AF0-CD83-456A-8DE7-3EE63590E312} = {09030B9F-95FE-428C-B9EA-363556414541}
 		{5A2E14EC-3CC3-4BC7-88FC-D91A59C489F8} = {101116F8-5064-4474-A172-FE2E0D563B3F}
+		{342C1A14-1489-46F6-AFB3-57BF8F4935CE} = {D949667C-A01E-4E9E-B9DF-016476B6C4C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E617E0D-CFA5-4FC3-82F4-C5D2E08EBFEC}

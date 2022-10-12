@@ -5,7 +5,7 @@ option csharp_namespace = "GrpcStudent";
 package StudentApi;
 
 service StudentGrpc {
-	rpc GetStudentWithCourseByIdAsync(GetStudentWithCourseByIdRequest) returns (GetStudentWithCourseByIdResponse) {}
+	rpc GetStudentWithCourseById(GetStudentWithCourseByIdRequest) returns (GetStudentWithCourseByIdResponse) {}
 }
 
 message GetStudentWithCourseByIdRequest {

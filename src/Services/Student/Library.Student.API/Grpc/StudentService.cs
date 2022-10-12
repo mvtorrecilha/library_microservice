@@ -18,7 +18,7 @@ public class StudentService : StudentGrpcBase
         _logger = logger;
     }
 
-    public override async Task<GetStudentWithCourseByIdResponse> GetStudentWithCourseByIdAsync(GetStudentWithCourseByIdRequest request, ServerCallContext context)
+    public override async Task<GetStudentWithCourseByIdResponse> GetStudentWithCourseById(GetStudentWithCourseByIdRequest request, ServerCallContext context)
     {
         _logger.LogInformation("Begin grpc call from method {Method} for student id {Id}", context.Method, request.Id);
         var response = await _mediator.Send(new GetStudentWithCourseByIdQuery() { StudentId = Guid.Parse(request.Id)});

@@ -50,4 +50,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGrpcServices();
+
 app.Run();
