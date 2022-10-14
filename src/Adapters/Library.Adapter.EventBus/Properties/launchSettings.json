@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Library.Adapter.EventBus": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

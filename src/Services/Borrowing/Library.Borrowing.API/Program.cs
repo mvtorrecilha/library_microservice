@@ -1,11 +1,18 @@
+using Library.Adapter.EventBus.Extensions;
 using Library.Borrowing.API.Configuration;
 using Library.Borrowing.Infrastructure.Data.Context;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSqlData(builder.Configuration);
+builder.Services
+    .AddSqlData(builder.Configuration)
+    .AddEventBus(builder.Configuration)
+    .AddMediatR(typeof(Program))
+    .AddControllers();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -35,5 +42,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.ConfigureEventBus();
 
 app.Run();

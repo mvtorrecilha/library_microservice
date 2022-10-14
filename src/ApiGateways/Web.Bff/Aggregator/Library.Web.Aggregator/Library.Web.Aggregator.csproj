@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Google.Protobuf" Version="3.21.6" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
     <PackageReference Include="Grpc.AspNetCore.Server.ClientFactory" Version="2.49.0" />
@@ -22,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Adapters\Library.Adapter.EventBus\Library.Adapter.EventBus.csproj" />
     <ProjectReference Include="..\..\..\..\Adapters\Library.Adapter.ResponseFormatter\Library.Adapter.ResponseFormatter.csproj" />
   </ItemGroup>
 

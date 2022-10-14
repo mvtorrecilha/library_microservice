@@ -23,7 +23,7 @@ public class BorrowingController : ControllerBase
 
     [HttpPost]
     [Route("/api/v1/borrowing")]
-    public async Task<ActionResult> AddCartIemAsync(BorrowingBookRequest borrowingBookRequest)
+    public async Task<ActionResult> BorrowBookAsync(BorrowingBookRequest borrowingBookRequest)
     {
         await _borrowingService.BorrowBookAsync(borrowingBookRequest);
         return _responseFormatter.Format();

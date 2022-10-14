@@ -21,6 +21,8 @@ public static class EventBusDiExtensions
                 return new ConnectionFactory()
                 {
                     HostName = configuration["EventBusConnection"],
+                    UserName = "guest",
+                    Password = "guest",
                     DispatchConsumersAsync = true
                 };
             });
