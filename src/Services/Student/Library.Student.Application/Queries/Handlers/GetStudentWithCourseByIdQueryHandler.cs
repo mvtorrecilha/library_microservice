@@ -16,7 +16,7 @@ public class GetStudentWithCourseByIdQueryHandler : IRequestHandler<GetStudentWi
 
     public async Task<GetStudentWithCourseByIdQueryResponse> Handle(GetStudentWithCourseByIdQuery request, CancellationToken cancellationToken)
     {
-        var student = await _studentRepository.GetByIdAsync(request.StudentId);
+        var student = await _studentRepository.GetStudentByIdAsync(request.StudentId);
 
         if (student is null)
         {

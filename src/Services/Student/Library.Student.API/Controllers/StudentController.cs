@@ -1,4 +1,6 @@
-﻿using Library.Student.Domain.Entities;
+﻿using Library.Student.Application.Queries.RequestModels;
+using Library.Student.Domain.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Student.API.Controllers;
@@ -7,8 +9,10 @@ namespace Library.Student.API.Controllers;
 [ApiController]
 public class StudentController : ControllerBase
 {
-    public StudentController()
+    private readonly IMediator _mediator;
+    public StudentController(IMediator mediator)
     {
+        _mediator = mediator;
     }
 
     [HttpGet]
@@ -16,6 +20,8 @@ public class StudentController : ControllerBase
     [Route("/api/students")]
     public async Task<ActionResult<IEnumerable<StudentItem>>> GetAllStudents()
     {
-        return null;
+       var studentsResponse =  await _mediator.Send(new GetAllStudentsQuery());
+
+        return Ok(studentsResponse.Students);
     }
 }

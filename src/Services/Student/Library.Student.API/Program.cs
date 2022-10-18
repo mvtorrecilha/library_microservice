@@ -8,7 +8,7 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services
+builder.Services    
     .AddCustomGrpc()
     .AddSqlData(builder.Configuration)
     .AddSqlServices()

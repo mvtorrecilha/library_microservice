@@ -4,7 +4,7 @@ namespace Library.Student.Domain.Repositories;
 
 public interface IStudentRepository
 {
-    Task<IEnumerable<StudentItem>> GetAllAsync();
+    Task<StudentItem> GetStudentByIdAsync(Guid Id);
 
-    Task<StudentItem> GetByIdAsync(Guid Id);
+    Task<IEnumerable<StudentItem>> GetAllStudentAsync();
 }
