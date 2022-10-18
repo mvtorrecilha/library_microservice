@@ -1,6 +1,6 @@
 ﻿using Library.Book.Domain.Entities;
 
-namespace Library.Book.Application.Commands.ResponseModels;
+namespace Library.Book.Application.Queries.ResponseModels;
 
 public class GetAllBooksQueryResponse
 {

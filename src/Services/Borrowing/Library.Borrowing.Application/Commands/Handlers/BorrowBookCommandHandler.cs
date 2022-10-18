@@ -30,7 +30,7 @@ public class BorrowBookCommandHandler : IRequestHandler<BorrowBookCommand, bool>
         };
 
         await _borrowingRepository.AddBorrowingAsync(bookToBorrow);
-        _borrowingRepository.SaveChanges();
+        await _borrowingRepository.SaveChangesAsync();
 
         return true;
     }

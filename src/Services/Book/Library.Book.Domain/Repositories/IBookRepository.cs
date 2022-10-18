@@ -7,4 +7,8 @@ public interface IBookRepository
     Task<BookItem> GetBookByIdAsync(Guid Id);
 
     Task<IEnumerable<BookItem>> GetAllBooksAsync();
+
+    void UpdateBook(BookItem book);
+
+    Task<int> SaveChangesAsync();
 }

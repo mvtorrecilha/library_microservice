@@ -17,4 +17,10 @@ public class BookRepository : RepositoryBase<BookContext, BookItem>, IBookReposi
 
     public async Task<IEnumerable<BookItem>> GetAllBooksAsync() =>
             await GetAllAsync();
+
+    public void UpdateBook(BookItem book) =>
+            Update(book);
+
+    public async Task<int> SaveChangesAsync() =>
+          await CompleteAsync();
 }

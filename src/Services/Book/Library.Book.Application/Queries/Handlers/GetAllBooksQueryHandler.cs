@@ -1,9 +1,9 @@
-﻿using Library.Book.Application.Commands.RequestModels;
-using Library.Book.Application.Commands.ResponseModels;
+﻿using Library.Book.Application.Queries.RequestModels;
+using Library.Book.Application.Queries.ResponseModels;
 using Library.Book.Domain.Repositories;
 using MediatR;
 
-namespace Library.Book.Application.Commands.Handlers;
+namespace Library.Book.Application.Queries.Handlers;
 
 public class GetAllBooksQueryHandler : IRequestHandler<GetAllBooksQuery, GetAllBooksQueryResponse>
 {

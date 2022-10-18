@@ -12,5 +12,5 @@ public interface IBorrowingRepository
 
     Task<bool> IsValidToBorrow(Guid bookId);
 
-    int SaveChanges();
+    Task<int> SaveChangesAsync();
 }

@@ -22,7 +22,7 @@ public class BorrowingController : ControllerBase
     }
 
     [HttpPost]
-    [Route("/api/v1/borrowing")]
+    [Route("/api/v1/borrow-book")]
     public async Task<ActionResult> BorrowBookAsync(BorrowingBookRequest borrowingBookRequest)
     {
         await _borrowingService.BorrowBookAsync(borrowingBookRequest);

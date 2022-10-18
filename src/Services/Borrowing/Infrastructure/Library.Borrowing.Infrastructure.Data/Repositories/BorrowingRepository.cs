@@ -35,6 +35,6 @@ public class BorrowingRepository : RepositoryBase<BorrowContext, BorrowingHistor
         return true;
     }
 
-    public int SaveChanges() =>
-           Complete();
+    public async Task<int> SaveChangesAsync() =>
+           await CompleteAsync();
 }
