@@ -49,11 +49,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.ApiGateway", "ApiGa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Web.Aggregator", "ApiGateways\Web.Bff\Aggregator\Library.Web.Aggregator\Library.Web.Aggregator.csproj", "{D0EA5C66-2440-4C12-8B17-0FDF40D4FCE4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{B8EDEDC9-316D-4D5F-A589-C243BFB83B61}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{B8EDEDC9-316D-4D5F-A589-C243BFB83B61}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Adapter.ResponseFormatter", "Adapters\Library.Adapter.ResponseFormatter\Library.Adapter.ResponseFormatter.csproj", "{68EA3CD5-548D-415C-B329-E6BB54A08947}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Infra.ResponseFormatter", "Infra\Library.Infra.ResponseFormatter\Library.Infra.ResponseFormatter.csproj", "{68EA3CD5-548D-415C-B329-E6BB54A08947}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Adapter.EventBus", "Adapters\Library.Adapter.EventBus\Library.Adapter.EventBus.csproj", "{FA587820-A277-4E9E-8B13-F6CE9DC6BE56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Infra.EventBus", "Infra\Library.Infra.EventBus\Library.Infra.EventBus.csproj", "{FA587820-A277-4E9E-8B13-F6CE9DC6BE56}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Borrowing", "Borrowing", "{09030B9F-95FE-428C-B9EA-363556414541}"
 EndProject
@@ -69,7 +69,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Student.Application
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Book.Application", "Services\Book\Library.Book.Application\Library.Book.Application.csproj", "{342C1A14-1489-46F6-AFB3-57BF8F4935CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Borrowing.Application", "Services\Borrowing\Library.Borrowing.Application\Library.Borrowing.Application.csproj", "{70056B5B-8127-4D9C-8BE9-DD6A31DE05D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Borrowing.Application", "Services\Borrowing\Library.Borrowing.Application\Library.Borrowing.Application.csproj", "{70056B5B-8127-4D9C-8BE9-DD6A31DE05D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

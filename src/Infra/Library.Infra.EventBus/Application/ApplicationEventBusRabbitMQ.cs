@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Library.Adapter.EventBus.Events;
+using Library.Infra.EventBus.Events;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Polly;
@@ -9,7 +9,7 @@ using RabbitMQ.Client.Exceptions;
 using System.Net.Sockets;
 using System.Text;
 
-namespace Library.Adapter.EventBus.Application;
+namespace Library.Infra.EventBus.Application;
 
 public class ApplicationEventBusRabbitMQ : IApplicationEventBus
 {

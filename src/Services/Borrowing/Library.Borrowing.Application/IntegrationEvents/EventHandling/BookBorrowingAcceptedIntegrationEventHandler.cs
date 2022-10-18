@@ -1,4 +1,4 @@
-﻿using Library.Adapter.EventBus;
+﻿using Library.Infra.EventBus;
 using Library.Book.Application.Commands.RequestModels;
 using Library.Borrowing.Application.IntegrationEvents.Events;
 using MediatR;

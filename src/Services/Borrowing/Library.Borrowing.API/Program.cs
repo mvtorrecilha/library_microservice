@@ -1,6 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Library.Adapter.EventBus.Extensions;
+using Library.Infra.EventBus.Extensions;
 using Library.Borrowing.API.Configuration;
 using Library.Borrowing.Application;
 using Library.Borrowing.Infrastructure.Data;

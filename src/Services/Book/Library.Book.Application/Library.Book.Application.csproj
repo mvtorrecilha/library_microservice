@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Adapters\Library.Adapter.EventBus\Library.Adapter.EventBus.csproj" />
+    <ProjectReference Include="..\..\..\Infra\Library.Infra.EventBus\Library.Infra.EventBus.csproj" />
     <ProjectReference Include="..\Library.Book.Domain\Library.Book.Domain.csproj" />
   </ItemGroup>
 

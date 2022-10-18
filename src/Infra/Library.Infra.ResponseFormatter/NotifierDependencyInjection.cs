@@ -1,7 +1,7 @@
-﻿using Library.Adapter.ResponseFormatter.Common;
+﻿using Library.Infra.ResponseFormatter.Common;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Library.Adapter.ResponseFormatter;
+namespace Library.Infra.ResponseFormatter;
 
 public static class NotifierDependencyInjection
 {

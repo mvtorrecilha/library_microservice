@@ -1,8 +1,8 @@
 ﻿using Grpc.Core;
 using GrpcBook;
 using GrpcStudent;
-using Library.Adapter.EventBus.Application;
-using Library.Adapter.ResponseFormatter.Common;
+using Library.Infra.EventBus.Application;
+using Library.Infra.ResponseFormatter.Common;
 using Library.Web.Aggregator.IntegrationEvents.Events;
 using Library.Web.Aggregator.Models.Borrowing;
 using Library.Web.Aggregator.Services.Interfaces;

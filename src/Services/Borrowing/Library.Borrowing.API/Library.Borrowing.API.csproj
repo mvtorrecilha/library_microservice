@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Adapters\Library.Adapter.EventBus\Library.Adapter.EventBus.csproj" />
+    <ProjectReference Include="..\..\..\Infra\Library.Infra.EventBus\Library.Infra.EventBus.csproj" />
     <ProjectReference Include="..\Infrastructure\Library.Borrowing.Infrastructure.Data\Library.Borrowing.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\Library.Borrowing.Application\Library.Borrowing.Application.csproj" />
   </ItemGroup>

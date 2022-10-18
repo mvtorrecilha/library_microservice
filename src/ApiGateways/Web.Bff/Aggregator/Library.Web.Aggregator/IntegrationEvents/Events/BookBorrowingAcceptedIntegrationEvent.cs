@@ -1,4 +1,4 @@
-﻿using Library.Adapter.EventBus.Events;
+﻿using Library.Infra.EventBus.Events;
 
 namespace Library.Web.Aggregator.IntegrationEvents.Events;
 

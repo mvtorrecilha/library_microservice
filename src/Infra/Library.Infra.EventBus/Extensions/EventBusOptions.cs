@@ -1,4 +1,4 @@
-﻿namespace Library.Adapter.EventBus.Extensions;
+﻿namespace Library.Infra.EventBus.Extensions;
 
 public class EventBusOptions
 {

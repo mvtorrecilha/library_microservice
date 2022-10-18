@@ -1,8 +1,8 @@
-﻿using Library.Adapter.ResponseFormatter.Common;
+﻿using Library.Infra.ResponseFormatter.Common;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace Library.Adapter.ResponseFormatter;
+namespace Library.Infra.ResponseFormatter;
 
 public class ResponseFormatterResult : IResponseFormatterResult
 {

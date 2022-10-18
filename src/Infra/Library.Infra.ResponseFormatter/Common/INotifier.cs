@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Library.Adapter.ResponseFormatter.Common;
+namespace Library.Infra.ResponseFormatter.Common;
 
 public interface INotifier
 {

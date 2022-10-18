@@ -1,4 +1,4 @@
-﻿using Library.Adapter.ResponseFormatter;
+﻿using Library.Infra.ResponseFormatter;
 using Library.Web.Aggregator.Models.Borrowing;
 using Library.Web.Aggregator.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;

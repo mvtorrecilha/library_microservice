@@ -1,4 +1,4 @@
-﻿namespace Library.Adapter.EventBus.Events;
+﻿namespace Library.Infra.EventBus.Events;
 
 public abstract record Message
 {

@@ -1,6 +1,6 @@
 using Autofac.Extensions.DependencyInjection;
-using Library.Adapter.EventBus.Extensions;
-using Library.Adapter.ResponseFormatter;
+using Library.Infra.EventBus.Extensions;
+using Library.Infra.ResponseFormatter;
 using Library.Web.Aggregator.Extensions;
 using MediatR;
 

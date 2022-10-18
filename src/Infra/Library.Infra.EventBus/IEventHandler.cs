@@ -1,6 +1,6 @@
-﻿using Library.Adapter.EventBus.Events;
+﻿using Library.Infra.EventBus.Events;
 
-namespace Library.Adapter.EventBus;
+namespace Library.Infra.EventBus;
 
 public interface IEventHandler<in TEvent> : IEventHandler
         where TEvent : IntegrationEvent

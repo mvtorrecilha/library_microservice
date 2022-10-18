@@ -1,4 +1,4 @@
-﻿namespace Library.Adapter.ResponseFormatter.Common;
+﻿namespace Library.Infra.ResponseFormatter.Common;
 
 public class Notification
 {

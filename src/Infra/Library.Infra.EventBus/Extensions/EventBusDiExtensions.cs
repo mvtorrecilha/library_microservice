@@ -1,11 +1,11 @@
 ﻿using Autofac;
-using Library.Adapter.EventBus.Application;
+using Library.Infra.EventBus.Application;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 
-namespace Library.Adapter.EventBus.Extensions;
+namespace Library.Infra.EventBus.Extensions;
 
 public static class EventBusDiExtensions
 {

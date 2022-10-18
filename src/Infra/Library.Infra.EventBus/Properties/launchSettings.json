@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Library.Adapter.EventBus": {
+    "Library.Infra.EventBus": {
       "commandName": "Project",
       "nativeDebugging": true
     }

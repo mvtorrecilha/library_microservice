@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Library.Adapter.ResponseFormatter;
+namespace Library.Infra.ResponseFormatter;
 
 public interface IResponseFormatterResult
 {

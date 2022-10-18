@@ -1,4 +1,4 @@
-﻿using Library.Adapter.EventBus.Application;
+﻿using Library.Infra.EventBus.Application;
 using Library.Borrowing.Application.IntegrationEvents.EventHandling;
 using Library.Borrowing.Application.IntegrationEvents.Events;
 
