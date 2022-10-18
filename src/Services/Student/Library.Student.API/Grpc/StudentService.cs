@@ -30,7 +30,7 @@ public class StudentService : StudentGrpcBase
     {
         if (studentResponse == null)
         {
-            return null;
+            return new GetStudentWithCourseByIdResponse();
         }
 
         var map = new GetStudentWithCourseByIdResponse

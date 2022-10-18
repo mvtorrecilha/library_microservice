@@ -2,6 +2,7 @@ using Library.Book.API.Configuration;
 using Library.Book.Application;
 using Library.Book.Infrastructure.Data;
 using Library.Book.Infrastructure.Data.Context;
+using Library.Infra.ResponseFormatter;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -9,6 +10,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
+    .AddNotifier()
     .AddCustomGrpc()
     .AddSqlData(builder.Configuration)
     .AddSqlServices()

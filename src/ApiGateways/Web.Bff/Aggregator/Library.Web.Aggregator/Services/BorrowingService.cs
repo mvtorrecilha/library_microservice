@@ -3,9 +3,12 @@ using GrpcBook;
 using GrpcStudent;
 using Library.Domain.Core.Bus;
 using Library.Infra.ResponseFormatter.Common;
+using Library.Web.Aggregator.Behaviors;
 using Library.Web.Aggregator.IntegrationEvents.Events;
 using Library.Web.Aggregator.Models.Borrowing;
 using Library.Web.Aggregator.Services.Interfaces;
+using MediatR;
+using System.Net;
 
 namespace Library.Web.Aggregator.Services;
 
@@ -38,7 +41,7 @@ public class BorrowingService : IBorrowingService
             return;
         }
 
-        if(! await IsValidBookBorrowingRequest(borrowingBookRequest.BookId, borrowingBookRequest.StudentId))
+        if (!await IsValidBookBorrowingRequest(borrowingBookRequest.StudentId, borrowingBookRequest.BookId))
         {
             return;
         }
@@ -47,11 +50,11 @@ public class BorrowingService : IBorrowingService
 
         try
         {
-           await _eventBus.PublishEvent(eventMessage);
+            await _eventBus.PublishEvent(eventMessage);
         }
         catch (Exception e)
         {
-            throw e;
+            _notifier.AddError("500", e.Message, null);
         }  
     }
 
@@ -66,8 +69,10 @@ public class BorrowingService : IBorrowingService
 
             var student = await _grpcStudentClient.GetStudentWithCourseByIdAsync(studentRequest);
 
-            if (student is null)
+            if (string.IsNullOrEmpty(student.Id))
             {
+                _notifier.AddError("Email", ErrorBehavior.StudentNotFound, "");
+                _notifier.SetStatuCode(HttpStatusCode.NotFound);
                 return false;
             }
 
@@ -88,8 +93,8 @@ public class BorrowingService : IBorrowingService
         }
         catch (RpcException e)
         {
-            throw e;
-        }
-        
+            _notifier.AddError(e.StatusCode.ToString(), e.Message, null);
+            return false;
+        }      
     }
 }
