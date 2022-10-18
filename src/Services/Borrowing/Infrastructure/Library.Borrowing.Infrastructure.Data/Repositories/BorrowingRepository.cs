@@ -22,7 +22,14 @@ public class BorrowingRepository : RepositoryBase<BorrowContext, BorrowingHistor
     public void UpdateBorrowing(BorrowingHistory borrowing) =>
             Update(borrowing);
 
-   
+    public async Task<BorrowingHistory> GetBorrowingHistoryAsync(Guid studentId, Guid bookId)
+    {
+        return await _context.BorrowingHistories
+            .Where(bh => bh.BookId == bookId &&
+                   bh.StudentId == studentId)
+            .FirstOrDefaultAsync();
+    }
+
     public async Task<bool> IsValidToBorrow(Guid bookId)
     {
         var result = await _context.BorrowingHistories

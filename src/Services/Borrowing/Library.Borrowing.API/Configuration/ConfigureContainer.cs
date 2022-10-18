@@ -5,9 +5,10 @@ namespace Library.Borrowing.API.Configuration;
 
 public static class ConfigureContainer
 {
-    public static void ContainerBuilderEvents(ContainerBuilder arg2)
+    public static void ContainerBuilderEvents(ContainerBuilder containerBuilder)
     {
-        arg2.RegisterType<BookBorrowingAcceptedIntegrationEventHandler>();
+        containerBuilder.RegisterType<BookBorrowingAcceptedIntegrationEventHandler>();
+        containerBuilder.RegisterType<BookReturnedAcceptedIntegrationEventHandler>();
     }
 }
 

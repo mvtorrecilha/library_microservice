@@ -45,7 +45,7 @@ public class BorrowingService : IBorrowingService
             return;
         }
 
-        var eventMessage = new BookBorrowingAcceptedIntegrationEvent(borrowingBookRequest.BookId, borrowingBookRequest.StudentId);
+        var eventMessage = new BookBorrowingAcceptedIntegrationEvent(borrowingBookRequest.StudentId, borrowingBookRequest.BookId);
 
         try
         {

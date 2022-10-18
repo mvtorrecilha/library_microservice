@@ -1,13 +1,16 @@
+using Autofac.Extensions.DependencyInjection;
 using Library.Book.API.Configuration;
 using Library.Book.Application;
 using Library.Book.Infrastructure.Data;
 using Library.Book.Infrastructure.Data.Context;
+using Library.Infra.EventBus.Extensions;
 using Library.Infra.ResponseFormatter;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 builder.Services
     .AddNotifier()
@@ -15,6 +18,7 @@ builder.Services
     .AddSqlData(builder.Configuration)
     .AddSqlServices()
     .AddApplication()
+    .AddEventBus(builder.Configuration)
     .AddMediatR(typeof(Program))
     .AddControllers();
 

@@ -10,6 +10,8 @@ public interface IBorrowingRepository
 
     void UpdateBorrowing(BorrowingHistory borrowing);
 
+    Task<BorrowingHistory> GetBorrowingHistoryAsync(Guid studentId, Guid bookId);
+
     Task<bool> IsValidToBorrow(Guid bookId);
 
     Task<int> SaveChangesAsync();

@@ -1,4 +1,5 @@
-﻿using Library.Borrowing.Application.IntegrationEvents.EventHandling;
+﻿using Library.Borrowing.Application.Commands.RequestModels;
+using Library.Borrowing.Application.IntegrationEvents.EventHandling;
 using Library.Borrowing.Application.IntegrationEvents.Events;
 using Library.Domain.Core.Bus;
 
@@ -18,6 +19,7 @@ public static class ServiceBusConfiguration
     {
         var eventBus = app.ApplicationServices.GetRequiredService<IApplicationEventBus>();
         eventBus.Subscribe<BookBorrowingAcceptedIntegrationEvent, BookBorrowingAcceptedIntegrationEventHandler>();
+        eventBus.Subscribe<BookReturnedAcceptedIntegrationEvent, BookReturnedAcceptedIntegrationEventHandler>();
 
         return app;
     }
