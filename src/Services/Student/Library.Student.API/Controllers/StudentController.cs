@@ -17,7 +17,7 @@ public class StudentController : ControllerBase
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [Route("/api/students")]
+    [Route("/api/v1/students")]
     public async Task<ActionResult<IEnumerable<StudentItem>>> GetAllStudents()
     {
        var studentsResponse =  await _mediator.Send(new GetAllStudentsQuery());

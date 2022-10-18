@@ -1,4 +1,6 @@
-﻿using Library.Book.Domain.Entities;
+﻿using Library.Book.Application.Commands.RequestModels;
+using Library.Book.Domain.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Book.API.Controllers;
@@ -7,15 +9,19 @@ namespace Library.Book.API.Controllers;
 [ApiController]
 public class BookController : ControllerBase
 {
-    public BookController()
+    private readonly IMediator _mediator;
+    public BookController(IMediator mediator)
     {
+        _mediator = mediator;
     }
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [Route("/api/books")]
+    [Route("/api/v1/books")]
     public async Task<ActionResult<IEnumerable<BookItem>>> GetAllBooks()
     {
-        return null;
+        var booksResponse = await _mediator.Send(new GetAllBooksQuery());
+
+        return Ok(booksResponse.Books);
     }
 }

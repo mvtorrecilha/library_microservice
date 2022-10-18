@@ -23,7 +23,7 @@ public class ValidateBookCommandHandler : IRequestHandler<ValidateBookCommand, V
 
     public async Task<ValidateBookCommandResponse> Handle(ValidateBookCommand request, CancellationToken cancellationToken)
     {
-        var book = await _bookRepository.GetByIdAsync(request.BookId);
+        var book = await _bookRepository.GetBookByIdAsync(request.BookId);
 
         if(book is null)
         {

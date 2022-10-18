@@ -1,26 +1,20 @@
 ﻿using Library.Book.Domain.Entities;
 using Library.Book.Domain.Repositories;
 using Library.Book.Infrastructure.Data.Context;
-using Microsoft.EntityFrameworkCore;
+using Library.Infra.Repository;
 
 namespace Library.Book.Infrastructure.Data.Repositories;
 
-public class BookRepository : IBookRepository
+public class BookRepository : RepositoryBase<BookContext, BookItem>, IBookRepository
 {
-    private readonly BookContext _context;
-
-    public BookRepository(BookContext context)
+    public BookRepository(BookContext bookContext)
+             : base(bookContext)
     {
-        _context = context;
     }
 
-    public async Task<IEnumerable<BookItem>> GetAllAsync()
-    {
-        return await _context.Books.ToListAsync();
-    }
+    public async Task<BookItem> GetBookByIdAsync(Guid Id) =>
+            await GetByIdAsync(Id);
 
-    public async Task<BookItem> GetByIdAsync(Guid Id)
-    {
-        return await _context.Books.FindAsync(Id);
-    }
+    public async Task<IEnumerable<BookItem>> GetAllBooksAsync() =>
+            await GetAllAsync();
 }

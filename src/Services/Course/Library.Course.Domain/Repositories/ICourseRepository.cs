@@ -4,7 +4,5 @@ namespace Library.Course.Domain.Repositories;
 
 public interface ICourseRepository
 {
-    Task<IEnumerable<CourseItem>> GetAllAsync();
-
-    Task<CourseItem> GetByIdAsync(Guid Id);
+    Task<IEnumerable<CourseItem>> GetAllCoursesAsync();
 }

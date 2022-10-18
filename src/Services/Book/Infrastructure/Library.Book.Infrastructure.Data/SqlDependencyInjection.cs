@@ -1,4 +1,5 @@
 ﻿using Library.Book.Domain.Repositories;
+using Library.Book.Infrastructure.Data.Context;
 using Library.Book.Infrastructure.Data.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,7 +9,11 @@ public static class SqlDependencyInjection
 {
     public static IServiceCollection AddSqlServices(this IServiceCollection services)
     {
-        services.AddScoped(typeof(IBookRepository), typeof(BookRepository));
+        services.AddScoped<IBookRepository, BookRepository>(sp =>
+        {
+            var context = sp.GetRequiredService<BookContext>();
+            return new BookRepository(context);
+        });
 
         return services;
     }

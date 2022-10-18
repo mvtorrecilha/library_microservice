@@ -1,4 +1,6 @@
-﻿using Library.Course.Domain.Entities;
+﻿using Library.Course.Application.Queries.RequestModels;
+using Library.Course.Domain.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Course.API.Controllers;
@@ -7,15 +9,19 @@ namespace Library.Course.API.Controllers;
 [ApiController]
 public class CourseController : ControllerBase
 {
-    public CourseController()
+    private readonly IMediator _mediator;
+    public CourseController(IMediator mediator)
     {
+        _mediator = mediator;
     }
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [Route("/api/courses")]
+    [Route("/api/v1/courses")]
     public async Task<ActionResult<IEnumerable<CourseItem>>> GetAllCourses()
     {
-        return null;
+        var coursesResponse = await _mediator.Send(new GetAllCoursesQuery());
+
+        return Ok(coursesResponse.Courses);
     }
 }

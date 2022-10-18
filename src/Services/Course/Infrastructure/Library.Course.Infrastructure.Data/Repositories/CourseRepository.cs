@@ -1,26 +1,17 @@
 ﻿using Library.Course.Domain.Entities;
 using Library.Course.Domain.Repositories;
 using Library.Course.Infrastructure.Data.Context;
-using Microsoft.EntityFrameworkCore;
+using Library.Infra.Repository;
 
 namespace Library.Course.Infrastructure.Data.Repositories;
 
-public class CourseRepository : ICourseRepository
+public class CourseRepository : RepositoryBase<CourseContext, CourseItem>, ICourseRepository
 {
-    private readonly CourseContext _context;
-
-    public CourseRepository(CourseContext context)
+    public CourseRepository(CourseContext courseContext)
+            : base(courseContext)
     {
-        _context = context;
     }
 
-    public async Task<IEnumerable<CourseItem>> GetAllAsync()
-    {
-        return await _context.Courses.ToListAsync();
-    }
-
-    public async Task<CourseItem> GetByIdAsync(Guid Id)
-    {
-        return await _context.Courses.FindAsync(Id);
-    }
+    public async Task<IEnumerable<CourseItem>> GetAllCoursesAsync() =>
+            await GetAllAsync();
 }

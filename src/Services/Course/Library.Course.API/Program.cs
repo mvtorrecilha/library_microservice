@@ -1,14 +1,20 @@
 using Library.Course.API.Configuration;
+using Library.Course.Application;
 using Library.Course.Infrastructure.Data;
 using Library.Course.Infrastructure.Data.Context;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSqlData(builder.Configuration);
-builder.Services.AddSqlServices();
-builder.Services.AddControllers();
+builder.Services
+    .AddSqlData(builder.Configuration)
+    .AddSqlServices()
+    .AddApplication()
+    .AddMediatR(typeof(Program))
+    .AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {

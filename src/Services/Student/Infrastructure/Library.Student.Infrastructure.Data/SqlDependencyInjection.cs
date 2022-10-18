@@ -1,9 +1,7 @@
-﻿using Library.Domain.Core.Bus;
-using Library.Student.Domain.Repositories;
+﻿using Library.Student.Domain.Repositories;
 using Library.Student.Infrastructure.Data.Context;
 using Library.Student.Infrastructure.Data.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace Library.Student.Infrastructure.Data;
 

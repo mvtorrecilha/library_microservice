@@ -4,7 +4,7 @@ namespace Library.Book.Domain.Repositories;
 
 public interface IBookRepository
 {
-    Task<IEnumerable<BookItem>> GetAllAsync();
+    Task<BookItem> GetBookByIdAsync(Guid Id);
 
-    Task<BookItem> GetByIdAsync(Guid Id);
+    Task<IEnumerable<BookItem>> GetAllBooksAsync();
 }
