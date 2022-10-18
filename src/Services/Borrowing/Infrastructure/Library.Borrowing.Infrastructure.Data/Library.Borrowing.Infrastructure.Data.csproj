@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Infra\Library.Infra.Repository\Library.Infra.Repository.csproj" />
     <ProjectReference Include="..\..\Library.Borrowing.Domain\Library.Borrowing.Domain.csproj" />
   </ItemGroup>
 

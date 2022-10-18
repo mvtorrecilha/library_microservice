@@ -29,8 +29,8 @@ public class BorrowBookCommandHandler : IRequestHandler<BorrowBookCommand, bool>
             BorrowDate = DateTime.Now
         };
 
-        await _borrowingRepository.AddAsync(bookToBorrow);
-        _borrowingRepository.Complete();
+        await _borrowingRepository.AddBorrowingAsync(bookToBorrow);
+        _borrowingRepository.SaveChanges();
 
         return true;
     }

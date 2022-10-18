@@ -7,7 +7,6 @@ using Library.Web.Aggregator.Behaviors;
 using Library.Web.Aggregator.IntegrationEvents.Events;
 using Library.Web.Aggregator.Models.Borrowing;
 using Library.Web.Aggregator.Services.Interfaces;
-using MediatR;
 using System.Net;
 
 namespace Library.Web.Aggregator.Services;

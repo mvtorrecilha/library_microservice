@@ -1,24 +1,28 @@
 ﻿using Library.Borrowing.Domain.Entities;
 using Library.Borrowing.Domain.Repositories;
 using Library.Borrowing.Infrastructure.Data.Context;
+using Library.Infra.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.Borrowing.Infrastructure.Data.Repositories;
 
-public class BorrowingRepository : IBorrowingRepository
+public class BorrowingRepository : RepositoryBase<BorrowContext, BorrowingHistory>, IBorrowingRepository
 {
-    private readonly BorrowContext _context;
-
-    public BorrowingRepository(BorrowContext context)
+    public BorrowingRepository(BorrowContext borrowContext)
+           : base(borrowContext)
     {
-        _context = context;
     }
 
-    public async Task<IEnumerable<BorrowingHistory>> GetAllAsync()
-    {
-        return await _context.BorrowingHistories.ToListAsync();
-    }
+    public async Task<IEnumerable<BorrowingHistory>> GetAllBorrowingHistoryAsync() =>
+          await GetAllAsync();
 
+    public async Task AddBorrowingAsync(BorrowingHistory borrowing) =>
+            await CreateAsync(borrowing);
+
+    public void UpdateBorrowing(BorrowingHistory borrowing) =>
+            Update(borrowing);
+
+   
     public async Task<bool> IsValidToBorrow(Guid bookId)
     {
         var result = await _context.BorrowingHistories
@@ -31,18 +35,6 @@ public class BorrowingRepository : IBorrowingRepository
         return true;
     }
 
-    public async Task AddAsync(BorrowingHistory borrowing)
-    {
-        await _context.BorrowingHistories.AddAsync(borrowing);
-    }
-
-    public void Update(BorrowingHistory borrowing)
-    {
-        _context.BorrowingHistories.Update(borrowing);
-    }
-
-    public int Complete()
-    {
-        return _context.SaveChanges();
-    }
+    public int SaveChanges() =>
+           Complete();
 }
