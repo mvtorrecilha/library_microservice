@@ -1,8 +1,8 @@
-﻿using MediatR;
+﻿using Library.Adapter.EventBus.Events;
 
 namespace Library.Borrowing.Application.IntegrationEvents.Events;
 
-public record BookBorrowingAcceptedIntegrationEvent : INotification
+public record BookBorrowingAcceptedIntegrationEvent : IntegrationEvent
 {
     public Guid BookId { get; }
 

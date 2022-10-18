@@ -2,4 +2,4 @@
 
 namespace Library.Adapter.EventBus.Events;
 
-public abstract record IntegrationEvent : Message, INotification { }
+public abstract record IntegrationEvent : Message, IRequest { }

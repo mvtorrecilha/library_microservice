@@ -9,9 +9,11 @@
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.2" />
+    <PackageReference Include="Scrutor" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Adapters\Library.Adapter.EventBus\Library.Adapter.EventBus.csproj" />
     <ProjectReference Include="..\Library.Borrowing.Domain\Library.Borrowing.Domain.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,6 @@
 ﻿using Library.Adapter.EventBus.Application;
+using Library.Borrowing.Application.IntegrationEvents.EventHandling;
+using Library.Borrowing.Application.IntegrationEvents.Events;
 
 namespace Library.Borrowing.API.Configuration;
 
@@ -15,7 +17,7 @@ public static class ServiceBusConfiguration
     public static IApplicationBuilder ConfigureEventBus(this IApplicationBuilder app)
     {
         var eventBus = app.ApplicationServices.GetRequiredService<IApplicationEventBus>();
-        eventBus.StartConsumer();
+        eventBus.Subscribe<BookBorrowingAcceptedIntegrationEvent, BookBorrowingAcceptedIntegrationEventHandler>();
 
         return app;
     }

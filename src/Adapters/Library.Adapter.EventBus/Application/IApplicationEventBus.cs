@@ -6,7 +6,9 @@ public interface IApplicationEventBus
 {
     Task PublishEvent<T>(T @event) where T : IntegrationEvent;
 
-    void StartConsumer();
+    void Subscribe<T, TH>()
+            where T : IntegrationEvent
+            where TH : IEventHandler<T>;
 
     void Dispose();
 }

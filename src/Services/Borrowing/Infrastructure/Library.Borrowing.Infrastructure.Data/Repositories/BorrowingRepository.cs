@@ -30,4 +30,19 @@ public class BorrowingRepository : IBorrowingRepository
 
         return true;
     }
+
+    public async Task AddAsync(BorrowingHistory borrowing)
+    {
+        await _context.BorrowingHistories.AddAsync(borrowing);
+    }
+
+    public void Update(BorrowingHistory borrowing)
+    {
+        _context.BorrowingHistories.Update(borrowing);
+    }
+
+    public int Complete()
+    {
+        return _context.SaveChanges();
+    }
 }

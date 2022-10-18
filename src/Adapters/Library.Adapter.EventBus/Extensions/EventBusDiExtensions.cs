@@ -1,6 +1,8 @@
-﻿using Library.Adapter.EventBus.Application;
+﻿using Autofac;
+using Library.Adapter.EventBus.Application;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 
 namespace Library.Adapter.EventBus.Extensions;
@@ -12,7 +14,8 @@ public static class EventBusDiExtensions
         return services.AddRabbitMQ(configuration);
     }
 
-    private static IServiceCollection AddRabbitMQ(this IServiceCollection services, IConfiguration configuration) =>
+    private static IServiceCollection AddRabbitMQ(this IServiceCollection services, IConfiguration configuration)
+    {
         services
             .AddSingleton<IApplicationRabbitMQPersistentConnection, ApplicationRabbitMQPersistentConnection>()
             .AddSingleton<IApplicationEventBus, ApplicationEventBusRabbitMQ>()
@@ -20,11 +23,25 @@ public static class EventBusDiExtensions
             {
                 return new ConnectionFactory()
                 {
-                    HostName = configuration["EventBusConnection"],
-                    UserName = "guest",
-                    Password = "guest",
+                    HostName = configuration["RabbitMQConnection:EventBusConnection"],
+                    UserName = configuration["RabbitMQConnection:UserName"],
+                    Password = configuration["RabbitMQConnection:Password"],
                     DispatchConsumersAsync = true
                 };
             });
 
+        services.AddSingleton<IApplicationEventBus, ApplicationEventBusRabbitMQ>(sp =>
+        {
+            var rabbitMQPersistentConnection = sp.GetRequiredService<IApplicationRabbitMQPersistentConnection>();
+            var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
+            var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+            var logger = sp.GetRequiredService<ILogger<ApplicationEventBusRabbitMQ>>();
+            int retryCount = Int32.Parse(configuration["RabbitMQConnection:RetryCount"]);
+
+
+            return new ApplicationEventBusRabbitMQ(rabbitMQPersistentConnection, logger, iLifetimeScope, retryCount);
+        });
+
+        return services;
+    }
 }

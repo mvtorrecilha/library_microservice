@@ -1,9 +1,11 @@
+using Autofac.Extensions.DependencyInjection;
 using Library.Adapter.EventBus.Extensions;
 using Library.Adapter.ResponseFormatter;
 using Library.Web.Aggregator.Extensions;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 builder.Services
     .AddNotifier()
@@ -17,7 +19,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

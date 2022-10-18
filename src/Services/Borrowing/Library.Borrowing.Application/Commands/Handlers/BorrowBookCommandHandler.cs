@@ -1,4 +1,5 @@
 ﻿using Library.Book.Application.Commands.RequestModels;
+using Library.Borrowing.Domain.Entities;
 using Library.Borrowing.Domain.Repositories;
 using MediatR;
 
@@ -21,10 +22,16 @@ public class BorrowBookCommandHandler : IRequestHandler<BorrowBookCommand, bool>
             return false;
         }
 
-        //if (!book.IsAvailable)
-        //{
-        //    return false;
-        //}
+        var bookToBorrow = new BorrowingHistory
+        {
+            StudentId = request.StudentId,
+            BookId = request.BookId,
+            BorrowDate = DateTime.Now
+        };
+
+        await _borrowingRepository.AddAsync(bookToBorrow);
+        _borrowingRepository.Complete();
+
         return true;
     }
 }

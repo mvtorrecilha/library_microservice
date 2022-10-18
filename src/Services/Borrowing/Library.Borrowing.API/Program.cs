@@ -1,16 +1,25 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Library.Adapter.EventBus.Extensions;
 using Library.Borrowing.API.Configuration;
+using Library.Borrowing.Application;
+using Library.Borrowing.Infrastructure.Data;
 using Library.Borrowing.Infrastructure.Data.Context;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(ConfigureContainer.ContainerBuilderEvents);
 
 builder.Services
     .AddSqlData(builder.Configuration)
-    .AddEventBus(builder.Configuration)
+    .AddSqlServices()
     .AddMediatR(typeof(Program))
+    .AddEventBus(builder.Configuration)
+    .AddApplication()
+    
     .AddControllers();
 
 builder.Services.AddControllers();
