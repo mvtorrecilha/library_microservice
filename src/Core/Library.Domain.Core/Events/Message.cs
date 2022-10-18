@@ -1,4 +1,4 @@
-﻿namespace Library.Infra.EventBus.Events;
+﻿namespace Library.Domain.Core.Events;
 
 public abstract record Message
 {

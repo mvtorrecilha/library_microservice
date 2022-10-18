@@ -1,6 +1,6 @@
-﻿using Library.Infra.EventBus.Events;
+﻿using Library.Domain.Core.Events;
 
-namespace Library.Infra.EventBus.Application;
+namespace Library.Domain.Core.Bus;
 
 public interface IApplicationEventBus
 {

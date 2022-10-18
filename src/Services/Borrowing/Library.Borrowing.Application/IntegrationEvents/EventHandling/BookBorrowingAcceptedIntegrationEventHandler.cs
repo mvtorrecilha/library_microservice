@@ -1,6 +1,6 @@
-﻿using Library.Infra.EventBus;
-using Library.Book.Application.Commands.RequestModels;
+﻿using Library.Book.Application.Commands.RequestModels;
 using Library.Borrowing.Application.IntegrationEvents.Events;
+using Library.Domain.Core.Bus;
 using MediatR;
 using Microsoft.Extensions.Logging;
 

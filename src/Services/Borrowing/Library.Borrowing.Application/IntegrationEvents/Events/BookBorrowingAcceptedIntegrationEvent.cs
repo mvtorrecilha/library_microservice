@@ -1,4 +1,4 @@
-﻿using Library.Infra.EventBus.Events;
+﻿using Library.Domain.Core.Events;
 
 namespace Library.Borrowing.Application.IntegrationEvents.Events;
 

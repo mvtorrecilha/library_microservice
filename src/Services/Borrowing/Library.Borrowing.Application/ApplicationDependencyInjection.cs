@@ -1,6 +1,6 @@
-﻿using Library.Infra.EventBus;
-using Library.Borrowing.Application.IntegrationEvents.EventHandling;
+﻿using Library.Borrowing.Application.IntegrationEvents.EventHandling;
 using Library.Borrowing.Application.IntegrationEvents.Events;
+using Library.Domain.Core.Bus;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 

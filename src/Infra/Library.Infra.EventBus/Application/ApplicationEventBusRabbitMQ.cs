@@ -1,5 +1,6 @@
 ﻿using Autofac;
-using Library.Infra.EventBus.Events;
+using Library.Domain.Core.Bus;
+using Library.Domain.Core.Events;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Polly;

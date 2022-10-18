@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
 using GrpcBook;
 using GrpcStudent;
-using Library.Infra.EventBus.Application;
+using Library.Domain.Core.Bus;
 using Library.Infra.ResponseFormatter.Common;
 using Library.Web.Aggregator.IntegrationEvents.Events;
 using Library.Web.Aggregator.Models.Borrowing;

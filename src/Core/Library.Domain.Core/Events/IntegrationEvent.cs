@@ -1,5 +1,5 @@
 ﻿using MediatR;
 
-namespace Library.Infra.EventBus.Events;
+namespace Library.Domain.Core.Events;
 
 public abstract record IntegrationEvent : Message, IRequest { }

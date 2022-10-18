@@ -1,6 +1,6 @@
-﻿using Library.Infra.EventBus.Application;
-using Library.Borrowing.Application.IntegrationEvents.EventHandling;
+﻿using Library.Borrowing.Application.IntegrationEvents.EventHandling;
 using Library.Borrowing.Application.IntegrationEvents.Events;
+using Library.Domain.Core.Bus;
 
 namespace Library.Borrowing.API.Configuration;
 

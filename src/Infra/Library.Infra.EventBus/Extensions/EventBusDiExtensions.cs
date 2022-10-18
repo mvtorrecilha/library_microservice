@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Library.Domain.Core.Bus;
 using Library.Infra.EventBus.Application;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
