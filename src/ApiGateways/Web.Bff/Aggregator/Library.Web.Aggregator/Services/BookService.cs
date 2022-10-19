@@ -5,25 +5,25 @@ using Library.Domain.Core.Bus;
 using Library.Infra.ResponseFormatter.Common;
 using Library.Web.Aggregator.Behaviors;
 using Library.Web.Aggregator.IntegrationEvents.Events;
-using Library.Web.Aggregator.Models.Borrowing;
+using Library.Web.Aggregator.Models.Book;
 using Library.Web.Aggregator.Services.Interfaces;
 using System.Net;
 
 namespace Library.Web.Aggregator.Services;
 
-public class BorrowingService : IBorrowingService
+public class BookService : IBookService
 {
     private readonly StudentGrpc.StudentGrpcClient _grpcStudentClient;
-    private readonly IApplicationEventBus _eventBus;
     private readonly BookGrpc.BookGrpcClient _grpcBookClient;
-    private readonly ILogger<BorrowingService> _logger;
+    private readonly IApplicationEventBus _eventBus;
+    private readonly ILogger<BookService> _logger;
     private readonly INotifier _notifier;
 
-    public BorrowingService(
+    public BookService(
         StudentGrpc.StudentGrpcClient grpcStudentClient,
         BookGrpc.BookGrpcClient grpcBookClient,
         IApplicationEventBus eventBus,
-        ILogger<BorrowingService> logger,
+        ILogger<BookService> logger,
         INotifier notifier)
     {
         _grpcStudentClient = grpcStudentClient;
@@ -35,7 +35,7 @@ public class BorrowingService : IBorrowingService
 
     public async Task BorrowBookAsync(BorrowingBookRequest borrowingBookRequest)
     {
-        if(borrowingBookRequest is null)
+        if (borrowingBookRequest is null)
         {
             return;
         }
@@ -54,7 +54,7 @@ public class BorrowingService : IBorrowingService
         catch (Exception e)
         {
             _notifier.AddError("500", e.Message, null);
-        }  
+        }
     }
 
     private async Task<bool> IsValidBookBorrowingRequest(Guid studentId, Guid bookId)
@@ -94,6 +94,6 @@ public class BorrowingService : IBorrowingService
         {
             _notifier.AddError(e.StatusCode.ToString(), e.Message, null);
             return false;
-        }      
+        }
     }
 }

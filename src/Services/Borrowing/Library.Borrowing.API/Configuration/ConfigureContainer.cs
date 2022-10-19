@@ -7,7 +7,6 @@ public static class ConfigureContainer
 {
     public static void ContainerBuilderEvents(ContainerBuilder containerBuilder)
     {
-        containerBuilder.RegisterType<BookBorrowingAcceptedIntegrationEventHandler>();
         containerBuilder.RegisterType<BookReturnedAcceptedIntegrationEventHandler>();
     }
 }

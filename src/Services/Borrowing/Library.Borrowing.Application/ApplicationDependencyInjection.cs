@@ -1,7 +1,4 @@
-﻿using Library.Borrowing.Application.IntegrationEvents.EventHandling;
-using Library.Borrowing.Application.IntegrationEvents.Events;
-using Library.Domain.Core.Bus;
-using MediatR;
+﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Library.Borrowing.Application;
@@ -15,8 +12,6 @@ public static class ApplicationDependencyInjection
                 .AddClasses(classes => classes.AssignableTo(typeof(IRequestHandler<,>)))
                     .AsImplementedInterfaces()
                     .WithTransientLifetime());
-
-        services.AddScoped<IEventHandler<BookBorrowingAcceptedIntegrationEvent>, BookBorrowingAcceptedIntegrationEventHandler>();
         return services;
     }
 

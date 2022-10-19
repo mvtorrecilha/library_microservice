@@ -1,3 +1,4 @@
+using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Library.Book.API.Configuration;
 using Library.Book.Application;
@@ -11,6 +12,7 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(ConfigureContainer.ContainerBuilderEvents);
 
 builder.Services
     .AddNotifier()
@@ -57,5 +59,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapGrpcServices();
+
+app.ConfigureEventBus();
 
 app.Run();

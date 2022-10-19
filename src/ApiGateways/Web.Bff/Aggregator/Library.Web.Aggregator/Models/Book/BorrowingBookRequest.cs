@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Web.Aggregator.Models.Borrowing;
+namespace Library.Web.Aggregator.Models.Book;
 
 public class BorrowingBookRequest
 {

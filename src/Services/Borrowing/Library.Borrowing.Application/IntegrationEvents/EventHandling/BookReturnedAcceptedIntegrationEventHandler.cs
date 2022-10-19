@@ -1,5 +1,4 @@
-﻿using Library.Book.Application.Commands.RequestModels;
-using Library.Borrowing.Application.Commands.RequestModels;
+﻿using Library.Borrowing.Application.Commands.RequestModels;
 using Library.Borrowing.Application.IntegrationEvents.Events;
 using Library.Domain.Core.Bus;
 using MediatR;

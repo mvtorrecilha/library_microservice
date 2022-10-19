@@ -1,6 +1,6 @@
 ﻿using Library.Domain.Core.Events;
 
-namespace Library.Borrowing.Application.IntegrationEvents.Events;
+namespace Library.Book.Application.IntegrationEvents.Events;
 
 public record BookBorrowingAcceptedIntegrationEvent : IntegrationEvent
 {

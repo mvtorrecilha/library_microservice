@@ -17,7 +17,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddGrpcServicesDI(this IServiceCollection services)
     {
         return services
-        .AddScoped<IBorrowingService, BorrowingService>();
+        .AddScoped<IBookService, BookService>();
     }
 
     public static IServiceCollection AddGrpcClientDI(this IServiceCollection services, IConfiguration configuration)

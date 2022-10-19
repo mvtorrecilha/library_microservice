@@ -1,8 +1,8 @@
-﻿using Library.Borrowing.Application.IntegrationEvents.EventHandling;
-using Library.Borrowing.Application.IntegrationEvents.Events;
+﻿using Library.Book.Application.IntegrationEvents.EventHandling;
+using Library.Book.Application.IntegrationEvents.Events;
 using Library.Domain.Core.Bus;
 
-namespace Library.Borrowing.API.Configuration;
+namespace Library.Book.API.Configuration;
 
 /// <summary>
 /// Class to configure service bus
@@ -17,7 +17,7 @@ public static class ServiceBusConfiguration
     public static IApplicationBuilder ConfigureEventBus(this IApplicationBuilder app)
     {
         var eventBus = app.ApplicationServices.GetRequiredService<IApplicationEventBus>();
-        eventBus.Subscribe<BookReturnedAcceptedIntegrationEvent, BookReturnedAcceptedIntegrationEventHandler>();
+        eventBus.Subscribe<BookBorrowingAcceptedIntegrationEvent, BookBorrowingAcceptedIntegrationEventHandler>();
 
         return app;
     }

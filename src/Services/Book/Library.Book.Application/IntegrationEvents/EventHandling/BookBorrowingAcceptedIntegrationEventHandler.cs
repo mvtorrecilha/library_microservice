@@ -1,10 +1,10 @@
 ﻿using Library.Book.Application.Commands.RequestModels;
-using Library.Borrowing.Application.IntegrationEvents.Events;
+using Library.Book.Application.IntegrationEvents.Events;
 using Library.Domain.Core.Bus;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Library.Borrowing.Application.IntegrationEvents.EventHandling;
+namespace Library.Book.Application.IntegrationEvents.EventHandling;
 
 public class BookBorrowingAcceptedIntegrationEventHandler : IEventHandler<BookBorrowingAcceptedIntegrationEvent>
 {
@@ -31,6 +31,6 @@ public class BookBorrowingAcceptedIntegrationEventHandler : IEventHandler<BookBo
             //TODO: Send notification
         }
 
-        //TODO: Send event to update book to not available
+        //TODO: Send event to register borrowing history
     }
 }

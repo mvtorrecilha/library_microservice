@@ -1,8 +1,9 @@
-﻿using Library.Web.Aggregator.Models.Borrowing;
+﻿using Library.Web.Aggregator.Models.Book;
 
 namespace Library.Web.Aggregator.Services.Interfaces;
 
-public interface IBorrowingService
+public interface IBookService
 {
     Task BorrowBookAsync(BorrowingBookRequest borrowingBookRequest);
 }
+
