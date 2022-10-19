@@ -6,12 +6,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Library.Borrowing.Application.IntegrationEvents.EventHandling;
 
-public class BookReturnedAcceptedIntegrationEventHandler : IEventHandler<BookReturnedAcceptedIntegrationEvent>
+public class RegisterBorrowHistoryIntegrationEventHandler : IEventHandler<RegisterBorrowHistoryIntegrationEvent>
 {
     private readonly IMediator _mediator;
     private readonly ILogger<BookReturnedAcceptedIntegrationEventHandler> _logger;
 
-    public BookReturnedAcceptedIntegrationEventHandler(
+    public RegisterBorrowHistoryIntegrationEventHandler(
         IMediator mediator,
         ILogger<BookReturnedAcceptedIntegrationEventHandler> logger
         )
@@ -20,9 +20,9 @@ public class BookReturnedAcceptedIntegrationEventHandler : IEventHandler<BookRet
         _logger = logger;
     }
 
-    public async Task Handle(BookReturnedAcceptedIntegrationEvent @event)
+    public async Task Handle(RegisterBorrowHistoryIntegrationEvent @event)
     {
-        var request = new RegisterReturnBookHistoryCommand() { StudentId = @event.StudentId, BookId = @event.BookId };
+        var request = new RegisterBorrowingHistoryCommand() { StudentId = @event.StudentId, BookId = @event.BookId };
 
         var result = await _mediator.Send(request);
 

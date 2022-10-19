@@ -18,6 +18,7 @@ public static class ServiceBusConfiguration
     {
         var eventBus = app.ApplicationServices.GetRequiredService<IApplicationEventBus>();
         eventBus.Subscribe<BookReturnedAcceptedIntegrationEvent, BookReturnedAcceptedIntegrationEventHandler>();
+        eventBus.Subscribe<RegisterBorrowHistoryIntegrationEvent, RegisterBorrowHistoryIntegrationEventHandler>();
 
         return app;
     }

@@ -32,7 +32,14 @@ public class ValidateBookCommandHandler : IRequestHandler<ValidateBookCommand, V
             return new ValidateBookCommandResponse();
         }
 
-        if(book.CourseId != request.CourseId)
+        if (!book.IsAvailable)
+        {
+            _notifier.AddError("Book Id", ErrorBehavior.BookAlreadyLent, request.BookId);
+            _notifier.SetStatuCode(HttpStatusCode.Forbidden);
+            return new ValidateBookCommandResponse();
+        }
+
+        if (book.CourseId != request.CourseId)
         {
             _notifier.AddError("Id", ErrorBehavior.TheBookDoesNotBelongToTheCourse, request.BookId);
             _notifier.SetStatuCode(HttpStatusCode.Forbidden);

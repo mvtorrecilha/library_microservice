@@ -1,4 +1,5 @@
 ﻿using Library.Borrowing.Application.Commands.RequestModels;
+using Library.Borrowing.Domain.Entities;
 using Library.Borrowing.Domain.Repositories;
 using MediatR;
 
@@ -15,14 +16,14 @@ public class RegisterBorrowingHistoryCommandHandler : IRequestHandler<RegisterBo
 
     public async Task<bool> Handle(RegisterBorrowingHistoryCommand request, CancellationToken cancellationToken)
     {
-        var borrowing = await _borrowingRepository.GetBorrowingHistoryAsync(request.StudentId, request.BookId);
-        if (borrowing is null)
+        var borrowHistry = new BorrowingHistory
         {
-            return false;
-        }
+            StudentId = request.StudentId,
+            BookId =  request.BookId,
+            BorrowDate = DateTime.Now
+        };
 
-        borrowing.ReturnDate = DateTime.Now;
-        _borrowingRepository.UpdateBorrowing(borrowing);
+        await _borrowingRepository.AddBorrowingAsync(borrowHistry);
         await _borrowingRepository.SaveChangesAsync();
 
         return true;

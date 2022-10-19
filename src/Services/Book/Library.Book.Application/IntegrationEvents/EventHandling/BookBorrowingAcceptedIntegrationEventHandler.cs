@@ -30,7 +30,5 @@ public class BookBorrowingAcceptedIntegrationEventHandler : IEventHandler<BookBo
         {
             //TODO: Send notification
         }
-
-        //TODO: Send event to register borrowing history
     }
 }
