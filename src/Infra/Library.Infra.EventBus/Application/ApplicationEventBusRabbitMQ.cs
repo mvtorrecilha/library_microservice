@@ -15,6 +15,7 @@ namespace Library.Infra.EventBus.Application;
 public class ApplicationEventBusRabbitMQ : IApplicationEventBus
 {
     const string AUTOFAC_SCOPE_NAME = "library-events_bus";
+    const string EXCHANGE = "amq.direct";
 
     private readonly IApplicationRabbitMQPersistentConnection _persistentConnection;
     private readonly Dictionary<string, List<Type>> _handlers;
@@ -53,9 +54,6 @@ public class ApplicationEventBusRabbitMQ : IApplicationEventBus
             });
 
         using var channel = _persistentConnection.CreateModel();
-
-        _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", @event.Id);
-
         var eventName = @event.GetType().Name;
         channel.QueueDeclare(queue: eventName, durable: false, exclusive: false, autoDelete: false, arguments: null);
 
@@ -66,8 +64,10 @@ public class ApplicationEventBusRabbitMQ : IApplicationEventBus
         policy.Execute(() =>
         {
             var properties = channel.CreateBasicProperties();
+            properties.Persistent = true;
+            properties.DeliveryMode = 2;
 
-            channel.BasicPublish(exchange: "", routingKey: eventName, mandatory: true, basicProperties: properties, body: body);
+            channel.BasicPublish(exchange: EXCHANGE, routingKey: eventName, mandatory: true, basicProperties: properties, body: body);
         });
 
         return Task.CompletedTask;
