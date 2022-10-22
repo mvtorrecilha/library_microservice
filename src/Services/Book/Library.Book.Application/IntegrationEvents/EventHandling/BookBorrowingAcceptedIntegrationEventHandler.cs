@@ -1,5 +1,6 @@
 ﻿using Library.Book.Application.Commands.RequestModels;
 using Library.Book.Application.IntegrationEvents.Events;
+using Library.Book.Application.Notifications;
 using Library.Domain.Core.Bus;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -22,13 +23,23 @@ public class BookBorrowingAcceptedIntegrationEventHandler : IEventHandler<BookBo
 
     public async Task Handle(BookBorrowingAcceptedIntegrationEvent @event)
     {
+        _logger.LogInformation("----- Handling integration event: {IntegrationEventId} - ({@IntegrationEvent})", @event.Id, @event);
         var request = new BorrowBookCommand() { BookId = @event.BookId, StudentId = @event.StudentId };
+
+        _logger.LogInformation(
+                       "----- Sending command: {CommandName} - ({@Command})",
+                       nameof(request),
+                       request);
 
         var result = await _mediator.Send(request);
 
-        if(!result)
+        if(result)
         {
-            //TODO: Send notification
+            await _mediator.Publish(new BorrowedBookNotification
+            {
+                BookId = request.BookId,
+                StudentId = request.StudentId
+            });
         }
     }
 }
