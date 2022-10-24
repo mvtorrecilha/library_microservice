@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "46401615-cc97-4a4d-967a-fbf4e1b5a8ce",
+		"name": "Web Aggregator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Borrow a Book",
+			"item": [
+				{
+					"name": "Borrow a book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": \"E017D43B-6D8B-40BF-75AD-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:1001/api/v1/book/borrow-book",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"borrow-book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Borrow Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": \"967FA563-3585-4035-75B0-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:1001/borrow-book",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"borrow-book"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
