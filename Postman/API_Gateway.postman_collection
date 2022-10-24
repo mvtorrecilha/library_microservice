@@ -189,13 +189,16 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:1001/borrow-book",
+							"raw": "https://localhost:5101/api/v1/book/borrow-book",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "1001",
+							"port": "5101",
 							"path": [
+								"api",
+								"v1",
+								"book",
 								"borrow-book"
 							]
 						}
@@ -217,13 +220,16 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:1001/borrow-book",
+							"raw": "https://localhost:5101/api/v1/book/borrow-book",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "1001",
+							"port": "5101",
 							"path": [
+								"api",
+								"v1",
+								"book",
 								"borrow-book"
 							]
 						}
