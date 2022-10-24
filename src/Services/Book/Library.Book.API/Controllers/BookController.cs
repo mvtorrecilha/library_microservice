@@ -34,7 +34,7 @@ public class BookController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [Route("/api/v1/return-book")]
+    [Route("/api/v1/book/return-book")]
     public async Task<ActionResult<IEnumerable<BookItem>>> ReturnBookAsync(ReturnBookRequest returnBookRequest)
     {
         await _mediator
