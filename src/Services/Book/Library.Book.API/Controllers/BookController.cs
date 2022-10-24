@@ -14,12 +14,16 @@ public class BookController : ControllerBase
 {
     private readonly IMediator _mediator;
     private readonly IResponseFormatterResult _responseFormatter;
+    private readonly ILogger<BookController> _logger;
+
     public BookController(
         IMediator mediator,
-         IResponseFormatterResult responseFormatter)
+         IResponseFormatterResult responseFormatter,
+         ILogger<BookController> logger)
     {
         _mediator = mediator;
         _responseFormatter = responseFormatter;
+        _logger = logger;
     }
 
     [HttpGet]
@@ -27,6 +31,8 @@ public class BookController : ControllerBase
     [Route("/api/v1/books")]
     public async Task<ActionResult<IEnumerable<BookItem>>> GetAllBooksAsyc()
     {
+        _logger.LogInformation("----- Sending command query to get all book");
+
         var booksResponse = await _mediator.Send(new GetAllBooksQuery());
 
         return Ok(booksResponse.Books);
@@ -37,8 +43,13 @@ public class BookController : ControllerBase
     [Route("/api/v1/book/return-book")]
     public async Task<ActionResult<IEnumerable<BookItem>>> ReturnBookAsync(ReturnBookRequest returnBookRequest)
     {
-        await _mediator
-            .Send(new ReturnBookCommand() { BookId = returnBookRequest.BookId, StudentId = returnBookRequest.StudentId });
+        var command = new ReturnBookCommand() { BookId = returnBookRequest.BookId, StudentId = returnBookRequest.StudentId };
+        _logger.LogInformation(
+                       "----- Sending command: {CommandName} - ({@command})",
+                       nameof(ReturnBookCommand),
+                       command);
+
+        await _mediator.Send(command);
 
         return _responseFormatter.Format();
     }

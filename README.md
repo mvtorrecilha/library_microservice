@@ -10,6 +10,7 @@ A small simple library microservice .net core.
 - CQRS
 - Gateway pattern / Gateway Aggregation pattern
 - Swagger
+- RabbitMQ
 
 ## Features available for access:
 - Books:

@@ -23,6 +23,7 @@ public class StudentService : StudentGrpcBase
         _logger.LogInformation("Begin grpc call from method {Method} for student id {Id}", context.Method, request.Id);
         var response = await _mediator.Send(new GetStudentWithCourseByIdQuery() { StudentId = Guid.Parse(request.Id)});
 
+        _logger.LogInformation("Mapping student found to response: {response}", response);
         return MapToGetStudentWithCourseByIdResponse(response);
     }
 
