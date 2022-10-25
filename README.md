@@ -2,6 +2,7 @@
 
 A small simple library microservice .net core.
 
+![](img/library_microservice_architecture.png)
 ## Technologies:
 
 - ASP.NET Core 6.0
