@@ -15,7 +15,7 @@ namespace Library.Infra.EventBus.Application;
 public class ApplicationEventBusRabbitMQ : IApplicationEventBus
 {
     const string AUTOFAC_SCOPE_NAME = "library-events_bus";
-    const string EXCHANGE = "amq.direct";
+    const string EXCHANGE_NAME = "library-events-exchange";
 
     private readonly IApplicationRabbitMQPersistentConnection _persistentConnection;
     private readonly Dictionary<string, List<Type>> _handlers;
@@ -54,9 +54,15 @@ public class ApplicationEventBusRabbitMQ : IApplicationEventBus
             });
 
         using var channel = _persistentConnection.CreateModel();
-        var eventName = @event.GetType().Name;
-        channel.QueueDeclare(queue: eventName, durable: false, exclusive: false, autoDelete: false, arguments: null);
 
+        var arguments = new Dictionary<string, object>
+        {
+            { "x-dead-letter-exchange", "DeadLetterExchange" }
+        };
+        var eventName = @event.GetType().Name;
+        channel.QueueDeclare(queue: eventName, durable: false, exclusive: false, autoDelete: false, arguments: arguments);
+
+        channel.ExchangeDeclare(exchange: EXCHANGE_NAME, type: "direct");
         var settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
         var jsonMessage = JsonConvert.SerializeObject(@event, settings);
         var body = Encoding.UTF8.GetBytes(jsonMessage);
@@ -67,7 +73,7 @@ public class ApplicationEventBusRabbitMQ : IApplicationEventBus
             properties.Persistent = true;
             properties.DeliveryMode = 2;
 
-            channel.BasicPublish(exchange: EXCHANGE, routingKey: eventName, mandatory: true, basicProperties: properties, body: body);
+            channel.BasicPublish(exchange: "", routingKey: eventName, mandatory: true, basicProperties: properties, body: body);
         });
 
         return Task.CompletedTask;
@@ -134,8 +140,18 @@ public class ApplicationEventBusRabbitMQ : IApplicationEventBus
             _logger.LogError("StartBasicConsume can't call on _consumerChannel == null");
         }
 
+        _consumerChannel.ExchangeDeclare("DeadLetterExchange", ExchangeType.Fanout);
+        _consumerChannel.QueueDeclare("DeadLetterQueue", true, false, false, null);
+        _consumerChannel.QueueBind("DeadLetterQueue", "DeadLetterExchange","");
+
+        var arguments = new Dictionary<string, object>
+        {
+            { "x-dead-letter-exchange", "DeadLetterExchange" }
+        };
+
+        _consumerChannel.ExchangeDeclare(exchange: EXCHANGE_NAME, type: "direct");
         var eventName = typeof(T).Name;
-        _consumerChannel.QueueDeclare(queue: eventName, durable: false, exclusive: false, autoDelete: false, arguments: null);
+        _consumerChannel.QueueDeclare(queue: eventName, durable: false, exclusive: false, autoDelete: false, arguments: arguments);
 
         _consumerChannel.CallbackException += (sender, ea) =>
         {
@@ -163,16 +179,13 @@ public class ApplicationEventBusRabbitMQ : IApplicationEventBus
         try
         {
             await ProcessEvent(eventName, message).ConfigureAwait(false);
+            _consumerChannel.BasicAck(eventArgs.DeliveryTag, multiple: false);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "----- ERROR Processing message \"{Message}\"", message);
+            _consumerChannel.BasicNack(eventArgs.DeliveryTag, false, false);
         }
-
-        // Even on exception we take the message off the queue.
-        // in a REAL WORLD app this should be handled with a Dead Letter Exchange (DLX). 
-        // For more information see: https://www.rabbitmq.com/dlx.html
-        _consumerChannel.BasicAck(eventArgs.DeliveryTag, multiple: false);
     }
 
     private async Task ProcessEvent(string eventName, string message)
