@@ -3,7 +3,7 @@
 A small simple library microservice .net core.
 
 ![](img/library_microservice_architecture.png)
-## Technologies:
+## Implemented:
 
 - ASP.NET Core 6.0
 - Entity Framework Core
