@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "ef525625-00de-48a2-b1c0-d4430688e6c3",
+		"name": "Library Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Web Aggregator",
+			"item": [
+				{
+					"name": "Borrow a Book",
+					"item": [
+						{
+							"name": "Borrow a book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bookId\": \"E017D43B-6D8B-40BF-75AD-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:1001/api/v1/book/borrow-book",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"borrow-book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid Borrow Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bookId\": \"967FA563-3585-4035-75B0-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:1001/borrow-book",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"borrow-book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API Services",
+			"item": [
+				{
+					"name": "Courses",
+					"item": [
+						{
+							"name": "Get All Courses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:2001/api/v1/courses",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "2001",
+									"path": [
+										"api",
+										"v1",
+										"courses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Students",
+					"item": [
+						{
+							"name": "Get All Students",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:3001/api/v1/students",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Books",
+					"item": [
+						{
+							"name": "Get All books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:4001/api/v1/books",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "4001",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Return a Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bookId\": \"E017D43B-6D8B-40BF-75AD-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:4001/api/v1/book/return-book",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "4001",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"return-book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Borrowing",
+					"item": [
+						{
+							"name": "Get Borrowing Histories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:6001/api/v1/borrowing-history",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "6001",
+									"path": [
+										"api",
+										"v1",
+										"borrowing-history"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API Gateway",
+			"item": [
+				{
+					"name": "Gateway Borrow a Book",
+					"item": [
+						{
+							"name": "Gateway - Borrow a book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bookId\": \"E017D43B-6D8B-40BF-75AD-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:5101/api/v1/book/borrow-book",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"borrow-book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Gateway - Invalid Borrow Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bookId\": \"967FA563-3585-4035-75B0-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:5101/api/v1/book/borrow-book",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"borrow-book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gateway Courses",
+					"item": [
+						{
+							"name": "Gateway - Get All Courses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5101/course-api/v1/courses",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"course-api",
+										"v1",
+										"courses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gateway Students",
+					"item": [
+						{
+							"name": "Gateway - Get All Students",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5101/student-api/v1/students",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"student-api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gateway Books",
+					"item": [
+						{
+							"name": "Gateway - Get All books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5101/book-api/v1/books",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"book-api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Return Book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bookId\": \"E017D43B-6D8B-40BF-75AD-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:5101/book-api/v1/books/return-book",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"book-api",
+										"v1",
+										"books",
+										"return-book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gateway Borrowing",
+					"item": [
+						{
+							"name": "Gateway - Get Borrowing Histories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:5101/borrowing-api/v1/borrowing-history",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"borrowing-api",
+										"v1",
+										"borrowing-history"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Borrow a book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bookId\": \"E017D43B-6D8B-40BF-75AD-08DAABB26A91\",\r\n  \"studentId\": \"1673A9FD-191A-479C-A41F-3DC5611AA98E\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:5101/api/v1/book/borrow-book",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "5101",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"borrow-book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
